@@ -14,6 +14,14 @@
         "NODE_RED_PASSWORD": {
             "description": "The password to secure the editor.",
             "value": ""
+        },
+        "ORANGE_DEVICE_ID": {
+            "description": "The device ID from orange's maker studio.",
+            "value": ""
+        },
+        "ORANGE_DEVICE_TOKEN": {
+            "description": "The device token from orange's maker studio.",
+            "value": ""
         }
    },
     "addons": [ "heroku-postgresql" ]
