@@ -1,0 +1,39 @@
+{
+  "name": "pxlairquality-heroku-nodered",
+  "version": "1.0.0",
+  "description": "",
+  "main": "settings.js",
+  "scripts": {
+    "start": "node --optimize_for_size --max_old_space_size=460 node_modules/node-red/red.js --settings .node-red/settings.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryanhonof/pxlairquality-heroku-nodered.git"
+  },
+  "keywords": [
+    "iot",
+    "nb-iot",
+    "orange",
+    "pxl",
+    "node-red"
+  ],
+  "author": "Bryan Honof <Bryan.Honof@student.pxl.be> (http://11601615.pxl-ea-ict.be)",
+  "contributors": [
+    {
+      "name": "Bryan Honof"
+    },
+    {
+      "name": "Vincent Claes"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryanhonof/pxlairquality-heroku-nodered/issues"
+  },
+  "homepage": "https://github.com/bryanhonof/pxlairquality-heroku-nodered#readme",
+  "dependencies": {
+    "node-red": "0.20.3",
+    "md5": "2.2.1"
+  }
+}
