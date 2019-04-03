@@ -18,13 +18,12 @@
     "pxl",
     "node-red"
   ],
-  "author": "Bryan Honof <Bryan.Honof@student.pxl.be> (http://11601615.pxl-ea-ict.be)",
   "contributors": [
     {
-      "name": "Bryan Honof"
+      "name": "Bryan Honof <Bryan.Honof@student.pxl.be> (http://11601615.pxl-ea-ict.be)"
     },
     {
-      "name": "Vincent Claes"
+      "name": "Vincent Claes <Vincent.Claes@pxl.be>"
     }
   ],
   "license": "MIT",
