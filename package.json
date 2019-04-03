@@ -34,6 +34,6 @@
   "homepage": "https://github.com/bryanhonof/pxlairquality-heroku-nodered#readme",
   "dependencies": {
     "node-red": "0.20.3",
-    "node-red-admin": "0.1.5"
+    "node-red-contrib-web-worldmap": "1.5.37"
   }
 }
