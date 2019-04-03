@@ -16,7 +16,8 @@
 
 // The `https` setting requires the `fs` module. Uncomment the following
 // to make it available:
-//var fs = require("fs");
+var fs = require("fs");
+var md5 = require("md5");
 
 module.exports = {
     // the tcp port that the Node-RED web server is listening on
@@ -82,7 +83,7 @@ module.exports = {
     // By default, all user data is stored in a directory called `.node-red` under
     // the user's home directory. To use a different location, the following
     // property can be used
-    //userDir: '/home/nol/.node-red/',
+    userDir: __dirname,
 
     // Node-RED scans the `nodes` directory in the userDir to find local node files.
     // The following property can be used to specify an additional directory to scan.
@@ -120,14 +121,15 @@ module.exports = {
     // -----------------
     // To password protect the Node-RED editor and admin API, the following
     // property can be used. See http://nodered.org/docs/security.html for details.
-    adminAuth: {
-        type: "credentials",
-        users: [{
-            username: process.env.NODE_RED_USERNAME,
-            password: process.env.NODE_RED_PASSWORD,
-            permissions: "*"
-        }]
-    },
+    //adminAuth: {
+    //    type: "credentials",
+    //    users: [{
+    //        username: process.env.NODE_RED_USERNAME,
+    //        password: md5(process.env.NODE_RED_PASSWORD),
+    //        permissions: "*"
+    //    }]
+    //},
+
 
     // To password protect the node-defined HTTP endpoints (httpNodeRoot), or
     // the static content (httpStatic), the following properties can be used.
@@ -288,3 +290,4 @@ module.exports = {
         }
     }
 }
+
