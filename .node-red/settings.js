@@ -18,7 +18,8 @@
 // to make it available:
 var fs     = require('fs');
 var bcrypt = require('bcryptjs');
-var path = require("path");
+var path   = require("path");
+var when   = require("when");
 
 var NODE_RED_USERNAME = process.env.NODE_RED_USERNAME;
 var NODE_RED_PASSWORD = process.env.NODE_RED_PASSWORD = bcrypt.hashSync(process.env.NODE_RED_PASSWORD, 8); 
@@ -298,3 +299,6 @@ var settings = module.exports = {
         }
     }
 }
+
+settings.mongoAppname = 'nodered';
+settings.mongoUrl = process.env.MONGODB_URI;
