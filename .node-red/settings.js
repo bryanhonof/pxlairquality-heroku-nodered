@@ -18,6 +18,7 @@
 // to make it available:
 var fs     = require('fs');
 var bcrypt = require('bcryptjs');
+var path = require("path");
 
 var NODE_RED_USERNAME = process.env.NODE_RED_USERNAME;
 var NODE_RED_PASSWORD = process.env.NODE_RED_PASSWORD = bcrypt.hashSync(process.env.NODE_RED_PASSWORD, 8); 
