@@ -236,6 +236,7 @@ var settings = module.exports = {
     // their values. Setting this to true will cause the keys to be listed.
     exportGlobalContextKeys: false,
 
+    storageModule: require("./mongostorage"),
 
     // Context Storage
     // The following property can be used to enable context storage. The configuration
