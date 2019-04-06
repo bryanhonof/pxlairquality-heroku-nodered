@@ -3,9 +3,6 @@ var bcrypt = require('bcryptjs');
 var path   = require("path");
 var when   = require("when");
 
-var NODE_RED_USERNAME = process.env.NODE_RED_USERNAME;
-var NODE_RED_PASSWORD = process.env.NODE_RED_PASSWORD = bcrypt.hashSync(process.env.NODE_RED_PASSWORD, 8); 
-
 var settings = module.exports = {
     uiPort: process.env.PORT || 1880,
     mqttReconnectTime: 15000,
@@ -15,17 +12,6 @@ var settings = module.exports = {
     autInstallModules: true,
 
     debugMaxLength: 1000,
-
-    adminAuth: {
-        type: "credentials",
-        users: [{
-            username: NODE_RED_USERNAME,
-            password: NODE_RED_PASSWORD,
-            permissions: "*"
-        }]
-    },
-
-    functionGlobalContext: { },
 
     logging: {
         console: {
@@ -57,6 +43,8 @@ var settings = module.exports = {
         }
     },
 
+    functionGlobalContext: { },
+
     storageModule: require("./mongostorage"),
 
     httpNodeCors: {
@@ -65,6 +53,27 @@ var settings = module.exports = {
     },
 
     credentialSecret: false
+}
+
+if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
+    settings.adminAuth = {
+        type: "credentials",
+        users: function(username) {
+            if (process.env.NODE_RED_USERNAME == username) {
+                return when.resolve({username:username,permissions:"*"});
+            } else {
+                return when.resolve(null);
+            }
+        },
+        authenticate: function(username, password) {
+            if (process.env.NODE_RED_USERNAME == username &&
+                process.env.NODE_RED_PASSWORD == password) {
+                return when.resolve({username:username,permissions:"*"});
+            } else {
+                return when.resolve(null);
+            }
+        }
+    }
 }
 
 settings.mongoAppname = 'nodered';
