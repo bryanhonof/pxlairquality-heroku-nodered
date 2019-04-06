@@ -43,7 +43,9 @@ var settings = module.exports = {
         }
     },
 
-    functionGlobalContext: { },
+    functionGlobalContext: { 
+        env: process.env
+    },
 
     storageModule: require("./mongostorage"),
 
