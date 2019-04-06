@@ -42,7 +42,6 @@ var settings = module.exports = {
     // Blacklist the non-bluemix friendly nodes
     nodesExcludes:[ '66-mongodb.js','75-exec.js','35-arduino.js','36-rpi-gpio.js','25-serial.js','28-tail.js','50-file.js','31-tcpin.js','32-udp.js','23-watch.js' ],
     autInstallModules: true,
-    functionGlobalContext: {},
 
     // Retry time in milliseconds for TCP socket connections
     //socketReconnectTime: 10000,
@@ -75,7 +74,7 @@ var settings = module.exports = {
     //debugUseColors: true,
 
     // The file containing the flows. If not set, it defaults to flows_<hostname>.json
-    flowFile: 'flows.json',
+    // flowFile: 'flows.json',
 
     // To enabled pretty-printing of the flow within the flow file, set the following
     //  property to true:
