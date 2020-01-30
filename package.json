@@ -37,7 +37,7 @@
     "nano": "~5.11.0",
     "feedparser": "~0.19.2",
     "redis": "~0.10.1",
-    "node-red": "0.20.3",
+    "node-red": "1.0.3",
     "node-red-contrib-web-worldmap": "1.5.37",
     "postgrestor": "0.0.2",
     "node-red-node-mongodb": "0.0.14",
